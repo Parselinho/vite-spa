@@ -1,10 +1,12 @@
 const eventNavigation = (e, cb) => {
-  if (e.target.matches('[href^="/"]')) {
+  const targetElement = e.target.closest('[href^="/"], div[role="button"]');
+  if (targetElement) {
     e.preventDefault();
-    cb(e.target.getAttribute("href"));
-  } else if (e.target.matches('div[role="button"]')) {
-    e.preventDefault();
-    cb(e.target.getAttribute("data-href"));
+    const href =
+      targetElement.getAttribute("href") ||
+      targetElement.getAttribute("data-href");
+    cb(href);
   }
 };
+
 export default eventNavigation;

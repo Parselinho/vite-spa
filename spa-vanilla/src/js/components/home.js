@@ -1,9 +1,8 @@
 const injectHTML = () => {
-  return `        <h1>Home</h1>
+  return `
+    <h1>Home</h1>
+    <div role="button" data-href="/search" class="button-style"><span>Search</span></div>
     <a href="/about">About</a>
-    <br>
-    <br>
-    <div role="button" data-href="/about" class="button-style">Contact</div>
     <br>
     <a href="/about/me">About Me</a>`;
 };
